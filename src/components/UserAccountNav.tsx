@@ -22,7 +22,7 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
   const router = useRouter();
   const pathname = usePathname();
 
-  const handleScrollTo = (stringTo:string) => {
+  const handleScrollTo = (stringTo: string) => {
     router.push(`${pathname}#${stringTo}`);
   };
 
@@ -47,7 +47,14 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
         </div>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
-          <div onClick={() => handleScrollTo("projects")}>View projects</div>
+          <div
+            onClick={(e) => {
+              e.preventDefault();
+              handleScrollTo("projects");
+            }}
+          >
+            View projects
+          </div>
         </DropdownMenuItem>
 
         <DropdownMenuItem asChild>

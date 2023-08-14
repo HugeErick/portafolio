@@ -46,10 +46,24 @@ const MyProfileShown = () => {
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <div onClick={() => handleScrollTo("projects")}>View projects</div>
+            <div
+              onClick={(e) => {
+                e.preventDefault();
+                handleScrollTo("projects");
+              }}
+            >
+              View projects
+            </div>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <div onClick={() => handleScrollTo("skills")}>View skills</div>
+            <div
+              onClick={(e) => {
+                e.preventDefault();
+                handleScrollTo("skills");
+              }}
+            >
+              View skills
+            </div>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
