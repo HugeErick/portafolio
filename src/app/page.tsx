@@ -9,11 +9,11 @@ import Proyexx from "@/components/layout/Proyexx";
 export default function Home() {
   return (
     <div className="bg-inherit flex justify-center items-center">
-      <div className="flex flex-col mx-auto my-8">
+      <div className="flex flex-col mx-auto my-8 justify-center">
         <MainTitle />
         <MyProfileShown />
-        <IntroFrase />
         <Proyexx />
+        <IntroFrase />
         <MySkills />
         <PostFeedback />
         {/* @ts-ignore */}
