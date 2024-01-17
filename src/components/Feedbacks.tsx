@@ -15,5 +15,5 @@ const Feedbacks = async () => {
     <ExposeFeedbacks feedbacks={feedbacks} /> 
   );
 };
-
+//hi
 export default Feedbacks;
