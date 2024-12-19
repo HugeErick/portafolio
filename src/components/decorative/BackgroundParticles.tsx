@@ -37,7 +37,9 @@ const BackgroundParticles = () => {
         fpsLimit: 120,
         interactivity: {
           events: {
-            resize: true,
+						resize: {
+							enable: true,
+						},
           },
         },
         particles: {
