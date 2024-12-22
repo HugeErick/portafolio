@@ -66,6 +66,7 @@ body {
   --chart-3: 0 0% 30%;
   --chart-4: 0 0% 90%;
   --chart-5: 0 0% 10%;
+	--beige: 56 100% 84%; /* Very strong ass color use with transparency */
 	}
 }
 
@@ -75,5 +76,58 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+#presentationCardParent::before,
+#presentationCardParent::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  border: 1px solid hsla(var(--beige) / 0.2);
+  opacity: 0;
+  transform: scale(1);
+	pointer-events: none; 
+}
+
+#presentationCardParent:hover::before {
+  animation: wave 2s ease-in-out 2;
+}
+
+#presentationCardParent:hover::after {
+  animation: wave 2s ease-in-out 1;
+  animation-delay: 1s;
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1.15);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.35);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #presentationCardParent {
+    margin: 2vh auto;
+    /* Even smaller on mobile */
+    width: clamp(100px, 30vw, 150px);
+    height: clamp(100px, 30vw, 150px);
   }
 }

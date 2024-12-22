@@ -13,7 +13,7 @@ const PresentationCard = () => {
               play chess`;
 
   return (
-    <div className="relative w-full max-w-4xl bg-background border border-border rounded-lg shadow-lg overflow-hidden">
+    <div id="presentationCardParent" className="relative w-full max-w-4xl bg-background border border-border rounded-lg shadow-lg overflow-visible z-0">
       <BackgroundParticles />
       <div className="relative z-10 p-4 md:p-8 flex flex-col md:flex-row items-center gap-6">
         <div className="flex-1 space-y-4">
